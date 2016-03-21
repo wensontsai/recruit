@@ -15,22 +15,18 @@ import reducers from './reducers';
 // import CSS
 import './styles/core.scss';
 
-
 // Components
-import Main from './pages/main'
-import Login from './components/auth/login'
-import Dash from './components/dash/dash'
-
+import Main from './pages/main';
+import Login from './components/auth/login';
+import Dash from './components/dash/dash';
 
 // Middleware
-
 
 // // adding routing to reducers
 // const reducerRouted = combineReducers(Object.assign({}, reducers, {
 //   routing: routeReducer
 // }));
 // const reduxRouterMiddleware = syncHistory(browserHistory);
-
 
 const createStoreWithMiddleware = applyMiddleware(
   thunk,
@@ -41,9 +37,6 @@ const createStoreWithMiddleware = applyMiddleware(
 
 const store = createStoreWithMiddleware(reducers);
 // const store = createStoreWithMiddleware(reducerRouted);
-
-
-
 
 ReactDOM.render(
   <Provider store={store} >

@@ -57,9 +57,6 @@ export function sendCommand(display, command) {
   }
 }
 
-
-
-
 // AJAX WAY //
 // export function sendCommand(display, command){
 //     var paramsObj = {

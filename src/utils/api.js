@@ -4,8 +4,7 @@ import 'whatwg-fetch';
 // var $ = require('jquery');
 //          //
 
-
-async function request({ url, data, params = {} }) {
+async function request ({ url, data, params = {} }) {
   try {
     const response = await fetch(url, {
       credentials: 'include',
@@ -15,7 +14,8 @@ async function request({ url, data, params = {} }) {
       },
       body: data ? ((data instanceof FormData) ? data : JSON.stringify(data)) : undefined,
       ...params
-    })
+    });
+
     const contentType = response.headers.get('content-type');
 
     if (response.status < 200 || response.status >= 400) {
@@ -34,18 +34,17 @@ async function request({ url, data, params = {} }) {
   }
 }
 
-export function get(url) {
+export function get (url) {
   return request({ url });
 }
 
-export function post(url, data) {
+export function post (url, data) {
   return request({ url, data, params: { method: 'post' } });
 }
 
-export function del(url) {
+export function del (url) {
   return request({ url, params: { method: 'delete' } });
 }
-
 
 // AJAX WAY //
 // module.exports = {
