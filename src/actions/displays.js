@@ -20,7 +20,7 @@ export function queryAllDisplays() {
         type: actionTypes.GET_ALL_DISPLAYS
       });
     }
-  }
+  };
 }
 
 export function selectDisplay(display) {
@@ -29,7 +29,7 @@ export function selectDisplay(display) {
       type: actionTypes.SELECT_DISPLAY,
       currentDisplay: display
     });
-  }
+  };
 }
 
 export function sendCommand(display, command) {
@@ -54,7 +54,7 @@ export function sendCommand(display, command) {
         type: actionTypes.SEND_COMMAND_ERROR
       });
     }
-  }
+  };
 }
 
 // AJAX WAY //

@@ -1,8 +1,7 @@
 {
   "parser"  : "babel-eslint",
   "extends" : [
-    "standard",
-    "standard-react"
+
   ],
   "plugins" : [
     "flow-vars"
@@ -19,7 +18,6 @@
     "__BASENAME__" : false
   },
   "rules": {
-    "indent": [2, 2],
     "semi": [2, "always", { "omitLastInOneLineBlock": true}],
     "max-len": [2, 120, 2],
     "flow-vars/define-flow-type": 1,
