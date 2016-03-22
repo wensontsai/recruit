@@ -19,6 +19,8 @@ import './styles/core.scss';
 import Main from './pages/main';
 import Login from './components/auth/login';
 import Dash from './components/dash/dash';
+import Candidates from './components/candidates/candidates';
+import Prompts from './components/prompts/prompts';
 
 // Middleware
 
@@ -44,6 +46,8 @@ ReactDOM.render(
       <Route path='/' component={Main} />
       <Route path='/login' component={Login} />
       <Route path='/dash' component={Dash} />
+      <Route path='/candidates' component={Candidates} />
+      <Route path='/prompts' component={Prompts} />
     </Router>
   </Provider>,
   document.getElementById('root')

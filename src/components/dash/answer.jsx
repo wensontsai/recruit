@@ -16,7 +16,10 @@ class Answer extends Component {
 					<div>
 						Answer area
 					</div>
-					<input type="text"/>
+					<textarea className='' />
+					<div className='submit-answer'>
+						<button className='btn btn-sm'>Submit Answer</button>
+					</div>
 				</div>
 			);
 		}

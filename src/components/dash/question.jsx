@@ -12,7 +12,9 @@ class Question extends Component {
 
 				return (
 						<div className='question-view'>
+							<div>
 								Question prompt
+							</div>
 								<div>
 									<i>"as;ldkjf;laksjd;lfkj;alkasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfoiu2938oryialshdfjkaksjckhflasdfiulyhawkjefjasldkjfhaslkdjfhlaiuyweilfhalskjdfhlaskjhdfa98yweilufha8yoiuhwefiulhjkewfasyiul43ewfyuief8yiulh34erwf8iulrefsyuihrewfsyuilhrefsduilefuihefuyilherwfsdyiuherwafyiulhewafyilureafluihfaiulhwafyiulhwef"</i>
 								</div>

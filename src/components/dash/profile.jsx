@@ -19,7 +19,7 @@ class Profile extends Component {
 								<div>
 									when you are ready to begin, click here:
 								</div>
-									<button>Start!</button> :: 01:59:34
+									<button className='btn btn-sm' >Start!</button> :: 01:59:34
 								<div>
 									<hr />
 									// on click, area below will be shown,
