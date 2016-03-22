@@ -1,25 +1,35 @@
-import Koa from 'koa'
-
-import route from 'koa-route'
-import logger from 'koa-logger'
-import request from 'koa-request'
-import mongo from 'koa-mongo'
-
-import convert from 'koa-convert'
-import webpack from 'webpack'
-import webpackConfig from '../build/webpack.config'
-import historyApiFallback from 'koa-connect-history-api-fallback'
-import serve from 'koa-static'
-import proxy from 'koa-proxy'
-import _debug from 'debug'
-import config from '../config'
-import webpackDevMiddleware from './middleware/webpack-dev'
-import webpackHMRMiddleware from './middleware/webpack-hmr'
+import Koa from 'koa';
+import convert from 'koa-convert';
+import historyApiFallback from 'koa-connect-history-api-fallback';
+import serve from 'koa-static';
+import proxy from 'koa-proxy';
+import _debug from 'debug';
+import config from '../config';
+import webpack from 'webpack';
+import webpackConfig from '../build/webpack.config';
+import webpackDevMiddleware from './middleware/webpack-dev';
+import webpackHMRMiddleware from './middleware/webpack-hmr';
 
 const debug = _debug('app:server')
 const paths = config.utils_paths
 const app = new Koa()
 
+// ------------------------------------
+// Mongo DB Connect
+// ------------------------------------
+import db_config from './db_config'
+import assert from 'assert';
+
+var MongoClient = require('mongodb').MongoClient;
+MongoClient.connect(db_config.database, function(err, db) {
+  assert.equal(null, err);
+  console.log("~~~ > > > Connected correctly to MongoDB boyyÿÿÿÿÿÿ < < < ~~~");
+  db.close();
+});
+
+// ------------------------------------
+// Middleware
+// ------------------------------------
 // Enable koa-proxy if it has been enabled in the config.
 if (config.proxy && config.proxy.enabled) {
   app.use(convert(proxy(config.proxy.options)))
@@ -31,25 +41,6 @@ if (config.proxy && config.proxy.enabled) {
 app.use(convert(historyApiFallback({
   verbose: false
 })))
-
-// ------------------------------------
-// MongoDB connection
-// ------------------------------------
-import db_config from './db/config';
-app.use(mongo({
-  uri: db_config.database,
-  max: 100,
-  min: 1,
-  timeout: 30000,
-  log: true
-}));
-
-// ------------------------------------
-// Routes
-// ------------------------------------
-// import routes from './routes/routes'
-// app.use(route.get('/todo/new', routes.add));
-
 
 // ------------------------------------
 // Apply Webpack HMR Middleware
@@ -81,5 +72,11 @@ if (config.env === 'development') {
   // server in production.
   app.use(convert(serve(paths.base(config.dir_dist))))
 }
+
+// ------------------------------------
+// Routes
+// ------------------------------------
+
+
 
 export default app
