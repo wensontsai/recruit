@@ -1,7 +1,7 @@
 .DS_STORE
 *.log
 
-server/db/config/
+server/db/config
 
 node_modules
 
