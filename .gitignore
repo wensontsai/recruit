@@ -6,4 +6,4 @@ node_modules
 dist
 coverage
 
-db/config.js
+**/db/config.js
