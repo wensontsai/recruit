@@ -16,11 +16,11 @@
     "dev": "better-npm-run dev",
     "dev:nw": "npm run dev -- --nw",
     "dev:no-debug": "npm run dev -- --no_debug",
-    "test": "better-npm-run test",
-    "test:dev": "npm run test -- --watch",
     "deploy": "better-npm-run deploy",
     "flow:check": "babel-node bin/flow-check",
-    "codecov": "cat coverage/*/lcov.info | codecov"
+    "codecov": "cat coverage/*/lcov.info | codecov",
+    "test": "mocha --compilers js:babel-core/register --require ./tests/server/test_helper.js './tests/client/**/*.@(js|jsx)' ",
+    "test:watch": "npm run test -- --watch"
   },
   "betterScripts": {
     "compile": {
