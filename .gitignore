@@ -1,9 +1,10 @@
 .DS_STORE
 *.log
 
+server/db/config/*
+
 node_modules
 
 dist
 coverage
 
-server/db/config.js
