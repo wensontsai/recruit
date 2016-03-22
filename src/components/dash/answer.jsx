@@ -13,7 +13,10 @@ class Answer extends Component {
 
 			return (
 				<div className='answer-view'>
-					Answer area
+					<div>
+						Answer area
+					</div>
+					<input type="text"/>
 				</div>
 			);
 		}

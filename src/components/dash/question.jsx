@@ -7,13 +7,15 @@ import { selectDisplay } from '../../actions/displays';
 class Question extends Component {
 		render (){
 				const { 
-						displays,
-						selectDisplay
+
 				} = this.props;
 
 				return (
 						<div className='question-view'>
 								Question prompt
+								<div>
+									<i>"as;ldkjf;laksjd;lfkj;alkasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfoiu2938oryialshdfjkaksjckhflasdfiulyhawkjefjasldkjfhaslkdjfhlaiuyweilfhalskjdfhlaskjhdfa98yweilufha8yoiuhwefiulhjkewfasyiul43ewfyuief8yiulh34erwf8iulrefsyuihrewfsyuilhrefsduilefuihefuyilherwfsdyiuherwafyiulhewafyilureafluihfaiulhwafyiulhwef"</i>
+								</div>
 						</div>
 				);
 		}

@@ -1,4 +1,10 @@
 import Koa from 'koa'
+
+import route from 'koa-route'
+import logger from 'koa-logger'
+import request from 'koa-request'
+import mongo from 'koa-mongo'
+
 import convert from 'koa-convert'
 import webpack from 'webpack'
 import webpackConfig from '../build/webpack.config'
@@ -25,6 +31,25 @@ if (config.proxy && config.proxy.enabled) {
 app.use(convert(historyApiFallback({
   verbose: false
 })))
+
+// ------------------------------------
+// MongoDB connection
+// ------------------------------------
+import db_config from './db/config';
+app.use(mongo({
+  uri: db_config.database,
+  max: 100,
+  min: 1,
+  timeout: 30000,
+  log: true
+}));
+
+// ------------------------------------
+// Routes
+// ------------------------------------
+// import routes from './routes/routes'
+// app.use(route.get('/todo/new', routes.add));
+
 
 // ------------------------------------
 // Apply Webpack HMR Middleware

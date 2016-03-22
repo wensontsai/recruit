@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { selectDisplay } from '../../actions/displays';
 
 import Nav from '../nav/nav';
-
 import Answer from '../dash/answer';
 import Question from '../dash/question';
 import Profile from '../dash/profile';
@@ -13,8 +12,7 @@ import Profile from '../dash/profile';
 class DisplaysAll extends Component {
 		render (){
 				const {
-						displays, 
-						selectDisplay
+						
 				} = this.props;
 
 				return (

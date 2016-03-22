@@ -7,13 +7,24 @@ import { selectDisplay } from '../../actions/displays';
 class Profile extends Component {
 		render (){
 				const {
-						displays,
-						selectDisplay
+						
 				} = this.props;
 
 				return (
 						<div className='profile-view'>
-								User information goes here
+								<div>
+									User information goes here:
+								</div>
+								{'\n'}
+								<div>
+									when you are ready to begin, click here:
+								</div>
+									<button>Start!</button> :: 01:59:34
+								<div>
+									<hr />
+									// on click, area below will be shown,
+									and timer begins to count down
+								</div>
 						</div>
 				);
 		}
