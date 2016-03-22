@@ -1,35 +1,18 @@
-import * as actionTypes from '../actionTypes/displays';
-// import merge from 'lodash.merge';
+import * as actionTypes from '../actionTypes/dash';
 
 const initialState = {
-  displaysObject: {
-    'Europe': {
-      status: 'OFF'
-    },
-    'NYC': {
-      status: 'OFF'                                                                                                                                                                                                                     
-    },
-    'South America': {
-      status: 'OFF'
-    },
-    'Asia': {
-      status: 'OFF'
-    },
-    'Airport': {
-      status: 'OFF'
-    },
-    'Mars': {
-      status: 'OFF'
-    }
+  data: {
+    emailCode: '',
+    userId: '',
+    promptId
   },
-  currentDisplay: {
-    name: '***',
-    status: '***'
+  view: {
+    showPrompt: null
   }
 };
 
 // when app initializes
-// query for All Displays available
+// grab email code for user from URI
 // and set initialState
 const queryAllDisplays = () => {
   return initialState;
