@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { selectDisplay } from '../../actions/displays';
 
-class DisplaysAll extends Component {
+class Answer extends Component {
 		render (){
 			const { 
 					displays,
@@ -12,8 +12,8 @@ class DisplaysAll extends Component {
 			} = this.props;
 
 			return (
-				<div className='map-view'>
-					Map goes here
+				<div className='answer-view'>
+					Answer area
 				</div>
 			);
 		}
@@ -22,4 +22,4 @@ class DisplaysAll extends Component {
 export default connect(
 	(state) => ({ displays: state.displays }),
 	{ selectDisplay }
-)(DisplaysAll);
+)(Answer);

@@ -6,9 +6,9 @@ import { selectDisplay } from '../../actions/displays';
 
 import Nav from '../nav/nav';
 
-import Map from '../dash/map';
-import Sidebar from '../dash/sidebar';
-import Footer from '../dash/footer';
+import Answer from '../dash/answer';
+import Question from '../dash/question';
+import Profile from '../dash/profile';
 
 class DisplaysAll extends Component {
 		render (){
@@ -21,11 +21,11 @@ class DisplaysAll extends Component {
 						<div className='display-all-container'>
 								<Nav />
 								<div className='page'>
-								<div className='row001'>
-										<Map />
-										<Sidebar />
-								</div>
-										<Footer />
+									<Profile />
+									<div className='row001'>
+											<Question />
+											<Answer />
+									</div>
 								</div>
 						</div>
 				);

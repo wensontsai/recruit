@@ -5,6 +5,7 @@
   flex: 1;
 }
 .display-all-container .page .row001{
+  margin-top: 1rem;
   flex-direction: row;
   display: inline-flex;
 }
@@ -16,7 +17,14 @@
   display: inline-block
 }
 
-.map-view {
+.profile-view {
+  border: gray solid 1px;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 175px;
+  flex: 1 auto;
+}
+.answer-view {
   height: 450px;
   border: gray solid 1px;
   border-radius: 10px;
@@ -24,19 +32,11 @@
   -webkit-flex: 1;
   flex: 3 auto;
 } 
-.sidebar-view {
+.question-view {
   height: 450px;
   border: gray solid 1px;
   border-radius: 10px;
   padding: 1rem;
   flex: 1 auto;
-  margin-left: 1rem;
-}
-.footer-view {
-  border: gray solid 1px;
-  border-radius: 10px;
-  padding: 1rem;
-  height: 175px;
-  flex: 1 auto;
-  margin-top: 1rem;
+  margin-right: 1rem;
 }

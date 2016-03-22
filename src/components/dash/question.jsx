@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { selectDisplay } from '../../actions/displays';
 
-class DisplaysAll extends Component {
+class Question extends Component {
 		render (){
 				const { 
 						displays,
@@ -12,8 +12,8 @@ class DisplaysAll extends Component {
 				} = this.props;
 
 				return (
-						<div className='sidebar-view'>
-								Sidebar goes here
+						<div className='question-view'>
+								Question prompt
 						</div>
 				);
 		}
@@ -22,4 +22,4 @@ class DisplaysAll extends Component {
 export default connect(
 	(state) => ({ displays: state.displays }),
 	{ selectDisplay }
-)(DisplaysAll);
+)(Question);
