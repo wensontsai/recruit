@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
-import { selectDisplay } from '../../actions/displays';
+// import { selectDisplay } from '../../actions/displays';
 
 import Nav from '../nav/nav';
 import Answer from '../dash/answer';
@@ -32,5 +32,5 @@ class DisplaysAll extends Component {
 
 export default connect(
 	(state) => ({ displays: state.displays }),
-	{ selectDisplay }
+	// { selectDisplay }
 )(DisplaysAll);

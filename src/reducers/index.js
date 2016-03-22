@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import displays from './displays';
+import dash from './dash';
 
 const reducers = combineReducers({
   displays
