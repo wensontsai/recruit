@@ -1,4 +1,5 @@
 import Koa from 'koa';
+import session from 'koa-session'
 import convert from 'koa-convert';
 import historyApiFallback from 'koa-connect-history-api-fallback';
 import serve from 'koa-static';
@@ -17,14 +18,18 @@ const app = new Koa()
 // ------------------------------------
 // Mongo DB Connect
 // ------------------------------------
-import db_config from './db_config'
+import db from './db';
+import db_config from './db_config';
 import assert from 'assert';
 
-var MongoClient = require('mongodb').MongoClient;
-MongoClient.connect(db_config.database, function(err, db) {
-  assert.equal(null, err);
-  console.log("~~~ > > > Connected correctly to MongoDB boyyÿÿÿÿÿÿ < < < ~~~");
-  db.close();
+db.connect(db_config.database, function(err) {
+  if (err) {
+    console.log('Unable to connect to Mongo ! ! ! ! !')
+    process.exit(1)
+  } else {
+    assert.equal(null, err);
+    console.log("~~~ > > > Connected correctly to MongoDB boyyÿÿÿÿÿÿ < < < ~~~");
+  }
 });
 
 // ------------------------------------
