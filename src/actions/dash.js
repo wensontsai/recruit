@@ -3,7 +3,7 @@ import { get, post, del } from '../utils/api';
 
 var Api = require('../utils/api');
 
-export function startExam () {
+export function startExam (params) {
   return async dispatch => {
     dispatch({
       type: actionTypes.START_EXAM

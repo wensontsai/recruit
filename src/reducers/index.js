@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import dash from './dash';
 
 const reducers = combineReducers({
-  displays
+  dash
 });
 
 export default reducers;

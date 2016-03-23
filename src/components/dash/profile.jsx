@@ -2,12 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
-// import { selectDisplay } from '../../actions/displays';
+import { startExam } from '../../actions/dash';
 
 class Profile extends Component {
 		render (){
 				const {
-						
+						dash,
+						startExam
 				} = this.props;
 
 				return (
@@ -19,11 +20,12 @@ class Profile extends Component {
 								<div>
 									when you are ready to begin, click here:
 								</div>
-									<button className='btn btn-sm' >Start!</button> :: 01:59:34
-								<div>
-									<hr />
-									// on click, area below will be shown,
-									and timer begins to count down
+									<button className='btn btn-sm'
+										onClick={() => startExam(dash.data)}
+										>Start!
+									</button>
+								<div className='countdown-timer'>
+									01:00:83 remaining
 								</div>
 						</div>
 				);
@@ -31,6 +33,6 @@ class Profile extends Component {
 }
 
 export default connect(
-	(state) => ({ displays: state.displays }),
-	// { selectDisplay }
+	(state) => ({ dash: state.dash }),
+	{ startExam }
 )(Profile);

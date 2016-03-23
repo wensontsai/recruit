@@ -4,7 +4,6 @@ const initialState = {
   data: {
     emailCode: '',
     userId: '',
-    promptId
   },
   view: {
     showPrompt: null
@@ -14,36 +13,24 @@ const initialState = {
 // when app initializes
 // grab email code for user from URI
 // and set initialState
-const queryAllDisplays = () => {
-  return initialState;
-};
-
-const selectDisplay = (state, action) => {
+const startExam = (state, action) => {
+  console.log(state);
   let newState = Object.assign({}, state);
 
-  newState.currentDisplay = {
-    name: action.currentDisplay,
-    status: newState.displaysObject[action.currentDisplay].status
+  newState.view = {
+    showPrompt: true
   };
   return newState;
 };
 
-const sendCommand = (state, action) => {
+const submitAnswer = (state, action) => {
   let newState = Object.assign({}, state);
-
-  newState.displaysObject[action.result.display] = {
-    status: action.result.command
-  };
-  newState.currentDisplay = {
-    name: action.result.display,
-    status: action.result.command
-  };
-  return newState;
+  console.log('submit successful');
 };
 
-export default function displays (state = initialState, action) {
+export default function dash (state = initialState, action) {
   return ({
-    [actionTypes.SELECT_DISPLAY]: selectDisplay,
-    [actionTypes.SEND_COMMAND_SUCCESS]: sendCommand
+    [actionTypes.START_EXAMINATION_SUCCESS]: startExam,
+    [actionTypes.SUBMIT_ANSWER_SUCCESS]: submitAnswer
   }[action.type] || ((s) => s))(state, action);
 }
